@@ -1,5 +1,5 @@
-import { OrganizationSwitcher, SignedIn, SignedOut } from "@clerk/nextjs";
-import { Organization } from "@clerk/nextjs/server";
+import { OrganizationSwitcher, SignedIn, SignOutButton } from "@clerk/nextjs";
+// import { dark } from "@clerk/themes";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -7,12 +7,12 @@ function Topbar(){
     return (
         <nav className="topbar">
             <Link href="/" className="flex items-center gap-4">
-                <Image src="/assets/logo-no-background.svg" alt="logo" width={42} height={42} />
+                <Image src="/assets/logo-white.svg" alt="logo" width={42} height={42} />
             </Link>
             <div className= "flex items-center gap-1">
                 <div className="block md:hidden">
                     <SignedIn>
-                        <SignedOut>
+                        <SignOutButton>
                             <div className="flex cursor-pointer">
                                 <Image 
                                     src="/assets/logout.svg"
@@ -21,11 +21,12 @@ function Topbar(){
                                     height={24}
                                 />    
                             </div>
-                        </SignedOut>
+                        </SignOutButton>
                     </SignedIn>
                 </div>
                 <OrganizationSwitcher
                 appearance={{
+                    // baseTheme: dark,
                     elements: {
                         organizationSwitcherTrigger: "py-2 px-4",
                     },
