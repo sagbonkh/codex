@@ -18,7 +18,7 @@ export default function RootLayout({
     return (
         <ClerkProvider>
             <html lang="en">
-                <body className= {`${zen.className} bg-dark-1`}>
+                <body className= {`${zen.className} bg-light-1`}>
                     {children}
                 </body>
             </html>
