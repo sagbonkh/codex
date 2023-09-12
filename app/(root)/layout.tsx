@@ -1,13 +1,14 @@
 import { ClerkProvider } from '@clerk/nextjs'
 import '../globals.css'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Inter, Zen_Kaku_Gothic_New } from 'next/font/google'
 import Topbar from '@/components/shared/Topbar'
 import LeftSidebar from '@/components/shared/LeftSidebar'
 import RightSidebar from '@/components/shared/RightSidebar'
 import Bottombar from '@/components/shared/Bottombar'
 
 const inter = Inter({ subsets: ['latin'] })
+const zen = Zen_Kaku_Gothic_New({ subsets: ["latin"], weight: ['300', '400','700'],});
 
 export const metadata = {
   title: 'Codex',
@@ -22,7 +23,7 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className={inter.className}>
+        <body className={zen.className}>
           <Topbar />
           
           <main className='flex flex-row'>

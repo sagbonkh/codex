@@ -7,8 +7,8 @@ export const metadata = {
     description: 'A Next.js 13 Threads-like Codex Application'
 }
 
-const inter = Inter({ subsets: ["latin"]})
-// const zen = Zen_Kaku_Gothic_New({ subsets: ["latin"]})
+// const inter = Inter({ subsets: ["latin"]})
+const zen = Zen_Kaku_Gothic_New({ subsets: ["latin"], weight: ['300', '400','700'],});
 
 export default function RootLayout({
     children
@@ -18,7 +18,7 @@ export default function RootLayout({
     return (
         <ClerkProvider>
             <html lang="en">
-                <body className= {`${inter.className} bg-dark-1`}>
+                <body className= {`${zen.className} bg-dark-1`}>
                     {children}
                 </body>
             </html>
