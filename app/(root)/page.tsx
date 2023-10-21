@@ -55,6 +55,7 @@
 
 // export default Home;
 
+import CodexCard from "@/components/cards/CodexCard";
 import { fetchPosts } from "@/lib/actions/codex.actions";
 import { fetchUser } from "@/lib/actions/user.actions";
 import { currentUser } from "@clerk/nextjs";
@@ -75,7 +76,7 @@ export default async function Home () {
               <CodexCard 
                 key={post._id}
                 id={post._id}
-                currentUserId={user?.id}
+                currentUserId={user?.id ||""}
                 parentId={post.parentId}
                 content={post.text}
                 author={post.author}
